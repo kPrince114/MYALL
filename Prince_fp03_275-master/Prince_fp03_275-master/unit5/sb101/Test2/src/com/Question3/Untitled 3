@@ -1,0 +1,10 @@
+Write a multithreaded application that should perform the following tasks:
+● Start the 3 threads.
+● Give the name of those threads as Virat, Dhoni, and Rohit.
+● Set the max priority to the Dhoni thread.
+● Virat Thread should print the Addition of the first 20 numbers.
+● Dhoni thread should print from 1 to 10.
+● Rohit thread should print the product of 1st 10 number
+
+**Note:** Make sure that first, the Dhoni thread should print then Rohit Thread,
+and then Virat Thread.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home page</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(166, 166, 246);
+  }
+
+  #user-form {
+
+    width: 28%;
+    height: 270px;
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  #user-form>input {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 30px;
+    border-radius: 8px;
+    padding: 8px 0px;
+    font-size: 19px;
+    border: 1px solid green;
+  }
+
+  #user-form>select {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 30px;
+    border-radius: 8px;
+    padding: 8px 0px;
+    font-size: 19px;
+    border: 1px solid green;
+  }
+
+  #user-form>button {
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 30px;
+    border-radius: 8px;
+    padding: 8px 0px;
+    font-size: 19px;
+    border: 1px solid green;
+  }
+</style>
+
+<body>
+  <div id="navbar">
+    <h3>News App</h3>
+    <h3>Sign-Up</h3>
+    <h3>
+      <a href="/worldNews.html" style="color: rgb(7, 197, 7);">World News</a>
+    </h3>
+  </div>
+  <div id="user-form">
+    <input type="text" placeholder="Imageurl" id="image">
+    <input type="text" placeholder="name" id="name">
+    <input type="text" placeholder="email" id="email">
+    <select name="" id="country">
+      <option value="india">india</option>
+      <option value="newzeland">Newzeland</option>
+      <option value="usa">USA</option>
+      <option value="china">ChinaA</option>
+      <option value="uk">UK</option>
+    </select>
+    <button id="submit" onclick="clickfun()">submit</button>
+
+    <!-- Profile Pic, (Id:- image)
+           Name, (Id:- name)
+           Email, (Id:- email)
+           country, (Id: country) >> Dropdown with options "", "China", "Newzeland", "USA", "UK.  
+           ** Submit button will have Id:- "submit". -->
+  </div>
+</body>
+
+</html>
+<script>
+  function clickfun() {
+    let arr = [];
+    let obj = {
+      image: document.getElementById("image").value,
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      country: document.getElementById("country").value,
+    }
+    arr.push(obj);
+    window.location.href = "worldNews.html"
+    localStorage.setItem("user", JSON.stringify(arr));
+    console.log(arr);
+  }
+
+</script>

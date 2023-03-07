@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <button id="b1">increase</button>
+  <button>decrease</button>
+</body>
+
+</html>
+
+<script>
+  let c = localStorage.getItem("localc") || 0;
+
+  // if (localStorage.getItem("localc") == null) {
+  //   c = 0;
+  // }
+  // else {
+  //   c = localStorage.getItem("localc");
+  // }
+
+  document.querySelector("h1").innerText = c;
+  document.querySelector("h1+button").addEventListener("click", infun)
+  document.querySelector("#b1+button").addEventListener("click", defun)
+  function infun() {
+    c++
+    document.querySelector("h1").innerText = c;
+    localStorage.setItem("localc", c)
+  }
+  function defun() {
+    c--
+    document.querySelector("h1").innerText = c;
+    localStorage.setItem("localc", c)
+  }
+</script>

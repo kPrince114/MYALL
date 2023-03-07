@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+</head>
+
+<body>
+  <div id="order-form">
+    <!--Add your form html element here-->
+    <!--In form, give #name,#number and #address as HTML id's to relevant input elements -->
+    <!-- confirm button with id "confirm" -->
+    <input type="text" placeholder="Name">
+    <input type="number" placeholder="Number">
+    <input type="text" placeholder="address">
+    <button onclick="clickfun()">submit</button>
+  </div>
+</body>
+
+</html>
+<script>
+  let coun = 0
+  id = setInterval(function () {
+    coun++;
+    console.log(coun)
+  }, 1000)
+  function clickfun() {
+    if (coun >= 0 && coun < 3) {
+      alert("Your order is accepted ")
+    }
+    else if (coun >= 3 && coun < 8) {
+      alert("Your order is being Prepared ")
+    }
+    else if (coun >= 8 && coun < 10) {
+      alert("Your order is being packed ")
+    }
+    else if (coun >= 10 && coun < 12) {
+      alert("Your order is out for delivery  ")
+    }
+    else {
+      alert("Order delivered")
+    }
+    console.log(coun)
+  }
+</script>

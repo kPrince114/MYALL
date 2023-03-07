@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout</title>
+</head>
+<style>
+  #user-detail>input:nth-child(1) {
+    margin-left: 300px;
+  }
+
+  #movie {
+    width: 50%;
+    height: 400px;
+    margin: auto;
+  }
+
+  #movies>img {
+    width: 100%;
+    height: 80%;
+  }
+</style>
+
+<body>
+  <div id="navbar">
+    <h1>Checkout | Cost: 100/seat</h1>
+    <h1 style="text-align:end;" id="wallet"> <span id="span1"></span></h1>
+    <!-- Display the wallet amount here inside h1 tag with id as "wallet". Note only amount, no extra text. Like 500 not Rs 500 -->
+  </div>
+  <div id="user-detail">
+    <!-- input field to accept user name with id as "user_name"  -->
+    <input id="user_name" type="text" placeholder="Enter_your_name">
+    <!-- input field to accept number of seats with id as "number_of_seats"  -->
+    <input id="number_of_seats" type="number" placeholder="Book no of seets">
+    <!-- A submit button to confirm booking with id as "confirm"  -->
+    <button onclick="clickfun()" id="confirm">Conform</button>
+  </div>
+
+  <div id="movie">
+    <!-- Append the selected movie for booking here -->
+    <!-- movie should have title and image  -->
+    <!-- It should be the same movie you selected for booking  -->
+  </div>
+</body>
+
+</html>
+<script>
+  let amou = localStorage.getItem("amount")
+  console.log(amou);
+  let span = document.getElementById("span1").innerText = amou;
+  let movie = JSON.parse(localStorage.getItem("movie"))
+  console.log(movie);
+  let div = document.getElementById("movie")
+  let titl = document.createElement('h2');
+  titl.innerText = movie.Title;
+  let img = document.createElement('img');
+  img.src = movie.Poster;
+  div.append(titl, img);
+  function clickfun() {
+    let buy = document.getElementById("number_of_seats").value;
+    amou = amou - (buy * 100);
+    if (amou < 0) {
+      alert("Insufficient Balance!")
+      amou = amou + (buy * 100)
+    }
+    else {
+      alert("Booking successful!")
+      //
+    }
+    save = amou;
+    localStorage.setItem("amount", save)
+    console.log(amou);
+    let span = document.getElementById("span1").innerText = amou;
+
+  }
+</script>

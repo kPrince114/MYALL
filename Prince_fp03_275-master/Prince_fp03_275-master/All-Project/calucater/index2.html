@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  h1 {
+    color: red;
+    /* text-align: center; */
+
+  }
+
+  h2 {
+    color: blue;
+  }
+
+  h3 {
+    color: green;
+    /* text-align: center; */
+  }
+
+  #widgth {
+    width: 30%;
+    height: 50px;
+    border: 1px solid brown;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  #hight {
+    width: 30%;
+    height: 50px;
+    border: 1px solid brown;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  #cal {
+    width: 13%;
+    height: 50px;
+    border: 1px solid brown;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ans {
+    width: 50%;
+    height: 30px;
+    border: 1px solid white;
+    color: brown;
+  }
+
+  #ans>h4 {
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: sans-serif;
+  }
+</style>
+
+<body>
+  <h1>check your BMI</h1>
+  <h2>Enter your wigth and hight below to check your bmi result</h2>
+  <h3>put your wight in here(KG)</h3>
+  <input type="number" id="hight" placeholder="Enter you hight in cm">
+  <h3>And Your Height in here(CM)</h3>
+  <input type="number" id="widgth" placeholder="Enter your width in kg">
+  <button onclick="cal()" id="cal">Calculator BMI</button>
+  <div id="ans">
+    <h4></h4>
+  </div>
+
+
+</body>
+
+</html>
+<script>
+  function cal() {
+    bag = "";
+    var y = document.querySelector("#hight").value;
+    var x = document.querySelector("#widgth").value;
+    bag = bag + Number(x) + Number(y)
+    let d = (x / y ** 2) * 10000
+
+    if (d <= 18.4) {
+      document.querySelector("#ans>h4").innerText = "Your BMI is " + Number(d).toFixed(2) + " " + "Which is you are " + "UnderWeight";
+    }
+    else if (d >= 18.5 && d <= 24.9) {
+      document.querySelector("#ans>h4").innerText = "Your BMI is " + Number(d).toFixed(2) + " " + "Which is you are " + "Normal Weight";
+    }
+    else if (d >= 25 && d <= 29.9) {
+      document.querySelector("#ans>h4").innerText = "Your BMI is " + Number(d).toFixed(2) + " " + "Which is you are " + "Overwigth";
+    }
+    else {
+      document.querySelector("#ans>h4").innerText = "Your BMI is " + Number(d).toFixed(2) + " " + "Which is you are " + "Obese";
+    }
+
+    // document.querySelector("#ans").innerText = "yes"
+
+  }
+
+</script>

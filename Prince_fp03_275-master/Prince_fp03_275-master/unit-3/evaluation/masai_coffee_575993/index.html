@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #navbar {
+    width: 100%;
+    height: 70px;
+    background-color: orange;
+  }
+
+  #navbar>P {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 40px;
+  }
+
+  #navbar>P>a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  #menu {
+    width: 90%;
+    min-height: 1220px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    gap: 10px 50px;
+    margin-top: 20px;
+  }
+
+  #menu>div {
+    border: 1px solid blue;
+    height: 300px;
+  }
+
+  #menu>div>img {
+    width: 80%;
+    height: 60%;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  #menu>div>p {
+    text-align: center;
+  }
+
+  #menu>div>button {
+    margin-left: 35%;
+  }
+</style>
+
+<body>
+  <div id="navbar">
+    <p><a href="">Home</a></p>
+    <p><a href="">Login</a></p>
+    <p><a href="">Sign UP</a></p>
+    <p><a href="bucket.html">Bucket</a></p>
+
+    <!--Add navbar divs here-->
+    <!-- Link to bucket.html -->
+    <div id="coffee_count">
+
+      <!--Show total number of coffee added to bucket here, do not add anything only Total count. Not even "Count - 5" but  only number like this "5" -->
+
+    </div>
+  </div>
+
+  <div id="menu">
+    <!--Show coffee list here in grid format-->
+    <!-- add an add to bucket button to each item, give it HTML id as 'add_to_bucket' -->
+  </div>
+</body>
+
+</html>
+<script>
+  let arr = JSON.parse(localStorage.getItem("coffee")) || [];
+  let maindiv = document.getElementById("menu");
+  let data;
+  let data1;
+  async function getData() {
+    try {
+      let res = await fetch(" https://masai-api.herokuapp.com/coffee/menu");
+
+      //convert the stream into actual data
+      data = await res.json();
+      data1 = data.menu.data;
+      console.log(data1);
+      appendProducts(data1);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+
+  getData();
+  function appendProducts(data1) {
+    //data - array of object
+
+    maindiv.innerHTML = null;
+
+    data1.forEach(function (el) {
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      img.src = el.image;
+
+      let title = document.createElement("p");
+
+      title.innerText = el.title;
+
+      let price = document.createElement("p");
+
+      price.innerText = el.price;
+
+      let but = document.createElement("button")
+      but.innerText = "Add To Cart";
+      but.style.color = "green"
+      but.addEventListener("click", function () {
+        arr.push(el);
+        localStorage.setItem("coffee", JSON.stringify(arr));
+        // window.location.href = "cart.html";
+        console.log(arr);
+      })
+
+      div.append(img, title, price, but);
+
+      maindiv.append(div);
+    });
+  }
+</script>

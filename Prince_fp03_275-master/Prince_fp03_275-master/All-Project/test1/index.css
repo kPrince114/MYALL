@@ -1,0 +1,111 @@
+/* Write all the necessery css  */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#create {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: auto;
+  width: 30%;
+  height: 420px;
+  margin-top: -20px;
+  border: 0px solid none;
+}
+
+#create > h1 {
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 20px;
+}
+
+input {
+  width: 79%;
+  padding: 8px 15px;
+  display: block;
+  margin-top: 6px;
+  margin-left: 20px;
+  border: 2px solid darkgray;
+  font-size: 23px;
+  font-weight: bolder;
+}
+
+select {
+  width: 87.5%;
+  padding: 8px 15px;
+  display: block;
+  margin-left: 20px;
+  border: 2px solid darkgray;
+  margin-top: 8px;
+  font-size: 23px;
+  font-weight: bolder;
+}
+
+#last {
+  width: 88%;
+  cursor: pointer;
+}
+
+select > option {
+  color: green;
+  font-size: 20px;
+}
+
+#total-price {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+table,
+td,
+th {
+  border: 2px solid darkgrey;
+  font-size: 24px;
+  padding: 5px;
+}
+thead {
+  background-color: orange;
+}
+/* table, */
+tbody {
+  background-color: brown;
+  color: black;
+}
+
+/* table > thead > tr {
+  margin-left: 50px;
+  padding-left: 40px;
+}
+
+table > thead > tr > th {
+  border-radius: 1px solid red;
+  color: black;
+  margin-left: 3px;
+  display: inline-block;
+  padding: 4px 15px;
+  background-color: rgb(247, 247, 58);
+  font-size: 18px;
+}
+table > tbody > tr > td {
+  border-radius: 1px solid red;
+  color: black;
+  margin-left: 3px;
+  display: inline-block;
+  padding: 4px 15px;
+   background-color: rgb(247, 247, 58); 
+  font-size: 18px;
+} */
+table tr:hover {
+  background-color: #ddd;
+}
+td:hover {
+  background-color: green;
+  cursor: progress;
+}
+td7 {
+  border-color: white;
+}

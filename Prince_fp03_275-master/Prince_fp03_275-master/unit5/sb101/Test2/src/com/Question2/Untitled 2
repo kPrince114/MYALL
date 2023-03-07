@@ -1,0 +1,9 @@
+Create a Thread Pool of 3 Threads, and submit the 6 tasks using the Callable
+
+interface. Each task should accept a Student object (roll, name, address, marks )through
+the constructor and return the result of that student with his roll number.
+
+Example:
+If supplied Student object is: new Student(10, “Varun”, “Pune”, 450); 
+
+Then the thread should return: “Roll 10 student is Fail”

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  h1 {
+    color: red;
+    text-align: left;
+
+  }
+
+  h3 {
+    color: green;
+    text-align: left;
+  }
+
+  input {
+    width: 30%;
+    height: 50px;
+    border: 1px solid brown;
+    margin: auto;
+
+
+  }
+
+  #hei {
+    width: 30%;
+    height: 50px;
+    border: 1px solid brown;
+    margin: auto;
+  }
+
+  #cal {
+    width: 13%;
+    height: 50px;
+    border: 1px solid brown;
+    /* margin: auto; */
+
+    /* margin-left: 470px; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #ans {
+    width: 400px;
+    height: 200px;
+    color: green;
+    font-size: 25px;
+    font-family: sans-serif;
+  }
+</style>
+
+<body>
+  <h1>check your BMI</h1>
+  <h3>Enter your wigth and hight below to check your bmi result</h3>
+  <h3>put your wight in here(KG)</h3>
+  <input type="text" id="hight" placeholder="Enter you width">
+  <h3>And Your Height in here(CM)</h3>
+  <input type="text" id="widgth" placeholder="Enter your hight">
+  <div id="cal" onclick="fun()">Calculator BMI</div>
+  <div id="ans">your widgth is <span id="pe">xkg</span> whitch mean You are <span id="compare"> commitment</span>
+  </div>
+</body>
+
+</html>
+<script>
+  function fun() {
+    //console.log("prince")
+    var h = document.querySelector("#hight").value;
+    var w = document.querySelector("#widgth").value;
+    var he = (h / 100) * (h / 100);
+    var ans = w / he;
+    parseFloat(ans).toFixed(2)
+    document.querySelector("#pe").innerHTML = parseFloat(ans).toFixed(2);
+    if (ans <= 18.4) {
+      document.querySelector("#compare").innerHTML = " Under weigth ";
+    }
+    else if (ans >= 18.5 && ans <= 24.4) {
+      document.querySelector("#compare").innerHTML = " Normal weigth ";
+    }
+    else if (ans >= 24.5 && ans <= 29.9) {
+      document.querySelector("#compare").innerHTML = " Over weigth ";
+    }
+    else {
+      document.querySelector("#compare").innerHTML = " Obese weigth ";
+    }
+  }
+</script>

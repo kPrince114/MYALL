@@ -1,0 +1,24 @@
+Consider the following Bean classes:
+
+```java
+class Address{
+state: String
+city: String
+pincode: String
+}
+class Employee{
+empId: int
+empName: String
+salary: int
+email: String
+password: String
+address: Address //has-A relationship
+}
+```
+
+Inside the Demo1 class Serialize the List of 5 Employee objects with all details
+inside a file called “employeedata.txt”
+● Make sure that the employee’s password should not be serialized.
+● Inside the Demo2 class Deserialize the List of Employees from the “employeedata.txt”
+● After Deserialization, add one more Employee object inside that List and
+Serialize it back to the “employeedata.txt” file.

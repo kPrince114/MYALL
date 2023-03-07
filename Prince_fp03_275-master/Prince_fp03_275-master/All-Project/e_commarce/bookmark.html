@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admitted</title>
+  <link rel="stylesheet" href="commonStyles.css" />
+</head>
+
+<body>
+  <div id="links">
+    <div><a href="index.html">Home</a></div>
+    <div><a href="applied.html">Applied Jobs</a></div>
+    <div><a href="bookmark.html">Bookmarks</a></div>
+  </div>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Job Applied</th>
+          <th>delet bookmark</th>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
+  </main>
+</body>
+<script>
+  //you need to code here
+  let pr = JSON.parse(localStorage.getItem("bookdata"));
+  console.log(pr)
+  display(pr);
+  function display(pr) {
+    pr.forEach(function (ele, index) {
+      let tr = document.createElement("tr")
+      let td1 = document.createElement("td")
+      td1.innerText = ele.name;
+      td1.style.background = "green";
+      td1.style.color = "white";
+
+      let td2 = document.createElement("td")
+      td2.innerText = ele.email
+      let td3 = document.createElement("td")
+      td3.innerText = ele.role
+      let td4 = document.createElement("td")
+      td4.innerText = "delete bookmark"
+      td4.style.background = "red";
+      td4.addEventListener("click", function () {
+        bookmarkdel(index)
+      })
+      tr.append(td1, td2, td3, td4);
+      document.querySelector("tbody").append(tr);
+    });
+  };
+  function bookmarkdel(index) {
+    pr.splice(index, 1);
+    console.log(pr);
+    localStorage.setItem("bookdata", JSON.stringify(pr));
+    window.location.reload();
+  }
+</script>
+
+</html>

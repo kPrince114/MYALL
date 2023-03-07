@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<style>
+  #bucket {
+    width: 90%;
+    /* min-height: 1220px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    gap: 10px 50px;
+    margin-top: 20px;
+  }
+
+  #bucket>div {
+    border: 1px solid blue;
+    height: 300px;
+  }
+
+  #bucket>div>img {
+    width: 80%;
+    height: 60%;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  #bucket>div>p {
+    text-align: center;
+  }
+
+  #bucket>div>button {
+    margin-left: 35%;
+  }
+
+  #total-div>p {
+    color: brown;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h3 {
+    color: green;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+
+<body>
+  <div id="total-div">
+    <h3 id="total_amount">
+      <!--Show bucket total here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
+    </h3>
+  </div>
+  <div id="bucket">
+    <!--Show all coffee added to bucket here-->
+    <!-- add an remove button to each coffee so that you can remove that item from bucket, give the button HTML id as 'remove_coffee' -->
+  </div>
+  <a href="checkout.html"><button id="confirm"
+      style="margin-left: 50px; padding: 10px 40px; margin-top: 10px;border-radius: 10px; color: red;">checkout</button></a>
+
+  <!-- checkout link  -->
+</body>
+
+</html>
+<script>
+  // window.location.reload();
+  let allprice = 0;
+  let dat = JSON.parse(localStorage.getItem("coffee"));
+  console.log(dat);
+  let maindiv = document.querySelector("#bucket");
+  display(dat);
+  function display(data) {
+    maindiv.innerHTML = null;
+    dat.forEach(function (el, index) {
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      img.src = el.image;
+
+      let title = document.createElement("p");
+
+      title.innerText = el.title;
+
+      let price = document.createElement("p");
+
+      price.innerText = el.price;
+
+      let but = document.createElement("button")
+      but.innerText = "delete";
+      but.style.color = "red"
+      but.addEventListener("click", function () {
+        data.splice(index, 1);
+        console.log(data);
+        localStorage.setItem("coffee", JSON.stringify(data));
+        window.location.reload();
+
+      });
+      div.append(img, title, price, but);
+      maindiv.append(div);
+    });
+    for (var i = 0; i < dat.length; i++) {
+      allprice = allprice + dat[i].price;
+    }
+    let coun = document.createElement("P");
+    let h3 = document.getElementById("total_amount")
+    h3.innerText = `Total-Bucket:- ` + allprice;
+    coun.innerText = `Total-Bucket:- ${data.length}`
+
+    document.getElementById("total-div").append(coun, h3);
+  }
+
+
+</script>

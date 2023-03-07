@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .maindiv {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #3498db;
+  }
+
+  .centerdiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  h1 {
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+    text-shadow: 1px 2px 3px #2980b9;
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  textarea {
+    background: #444;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 0 0;
+    border: 20px solid #34495e;
+    font-size: 17px;
+    color: #ecf0f1;
+    font-weight: bold;
+  }
+
+  .mainbtn {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 5px solid #2980b9;
+    background: #ecf0f1;
+    font-size: 1rem;
+  }
+
+  h3 {
+    color: brown;
+    font-size: 23px;
+  }
+</style>
+
+<body>
+  <div class="maindiv">
+    <div class="centerdiv">
+      <h1>welcome to typeing speed test</h1>
+      <h3 id="time"></h3>
+      <h2 id="msg"></h2>
+      <br>
+      <textarea name="" id="myword" cols="100" rows="10" placeholder="remember cearfully you"></textarea>
+      <button id="btn" class="mainbtn"> Start</button>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+
+  const setofword = [
+    "Born and raised in a Hindu family in coastal Gujarat, Gandhi trained in the law at the Inner Temple, London, and was called to the bar at age 22 in June 1891. After two uncertain years in India, where he was unable to start a successful law practice, he moved to South Africa in 1893 to represent an Indian merchant in a lawsuit", "Subhas Bose was born into wealth and privilege in a large Bengali family in Orissa during the British Raj. The early recipient of an Anglocentric education, he was sent after college to England to take the Indian Civil Service examination. He succeeded with distinction in the vital first exam but demurred at taking the routine final exam, citing nationalism to be a higher calling", "Sundar Pichai is a computer engineer and the current CEO of Google Inc. The technology giant Google, which specializes in Internet-related services and products, underwent a major corporate restructuring in 2015 following which Alphabet Inc was launched as its parent company with co-founders Larry Page as its CEO and Sergey Brin as President. Pichai, who had been serving as Google’s head of Products and Engineering, was named the new CEO of Google which is the biggest company under Alphabet Inc", "The Buddha, or Siddhartha Gautama, was born around 567 B.C.E., in a small kingdom just below the Himalayan foothills. His father was a chief of the Shakya clan. It is said that twelve years before his birth the brahmins prophesied that he would become either a universal monarch or a great sage", "Mahavira Sanskrit also known as Vardhamana, was the 24th Tirthankara (supreme preacher) of Jainism. He was the spiritual successor of the 23rd Tirthankara Parshvanatha.[8] Mahavira was born in the early part of the 6th century BCE into a royal Kshatriya Jain family in ancient India.", "my name is prince kumar"
+  ]
+
+  const msg = document.getElementById("msg")
+  const typeword = document.getElementById("myword")
+  const btn = document.getElementById("btn")
+  const time = document.getElementById("time")
+
+  let startTime, endTime;
+  const playgame = () => {
+    let remdonNum = Math.floor(Math.random() * setofword.length);
+    msg.innerText = setofword[remdonNum];
+    let date = new Date();
+    startTime = date.getTime();
+    btn.innerText = "Done";
+
+  }
+  const endplay = () => {
+    let date = new Date();
+    endTime = date.getTime();
+    let totalTime = ((endTime - startTime) / 1000);
+    console.log(totalTime);
+    let totalstr = typeword.value;
+    let wordcount = wordcounter(totalstr)
+    let speed = Math.round((wordcount / totalTime) * 60);
+    let finalmsg = "your type at " + speed + " word per mintues ";
+    finalmsg += comapreword(msg.innerText, totalstr)
+    msg.innerText = finalmsg
+    time.innerText = "after 10 sec page referse so read fastly in your speed";
+  }
+  const wordcounter = (str) => {
+    let response = str.split(" ").length;
+    if (response == 1) {
+      response = 0;
+    }
+    console.log(response)
+    return response;
+  }
+  const comapreword = (str1, str2) => {
+    let word1 = str1.split(" ");
+    let word2 = str2.split(" ");
+    let cnt = 0;
+    word1.forEach(function (item, index) {
+      if (item == word2[index]) {
+        cnt++
+      }
+    })
+    let errorword = (word1.length - cnt);
+    return (cnt + " correct out of " + word1.length + " word and the total number of word " + errorword + " .");
+  }
+  btn.addEventListener("click", function () {
+    // console.log(this)
+
+    if (this.innerText == 'Start') {
+      typeword.disabled = false;
+      playgame();
+      // location.reload();
+    }
+    else if (this.innerText == "Done") {
+      const myTimeout = setTimeout(myGreeting, 10000);
+      typeword.disabled = true;
+      btn.innerText = "Start";
+      endplay();
+      function myGreeting() {
+        location.reload();
+      }
+
+
+    }
+  })
+
+
+</script>

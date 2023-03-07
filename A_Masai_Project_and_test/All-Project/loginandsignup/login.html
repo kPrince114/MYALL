@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin-top: 50px;
+  }
+
+
+
+  #first {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    width: 30%;
+    height: 450px;
+    border: 1px solid none;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 2px;
+  }
+
+  a {
+
+    font-family: sans-serif;
+    margin-top: -2px;
+  }
+
+  #first>label {
+    display: block;
+    color: blue;
+    margin-top: 20px;
+    font-size: 25px;
+    margin-left: 7px;
+  }
+
+  input {
+    width: 90%;
+    margin-top: 5px;
+    padding: 12px;
+    margin-left: 5px;
+  }
+
+  :placeholder-shown {
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  button {
+    padding: 12px 40px 12px 40px;
+    margin-top: 20px;
+    background-color: green;
+    border-radius: 7px;
+    border: 2px solid white;
+    color: white;
+    font-size: 19px;
+    margin-left: 30%;
+  }
+</style>
+
+<body>
+  <div id="first">
+    <h2>Login Page</h2>
+    <a href="sign.html">Sign in/</a>
+    <a href="login.html">Login</a>
+    <label for="">Email</label>
+    <input type="email" id="emai" placeholder="Enter email-id">
+    <label for="">password</label>
+    <input type="password" id="psw" placeholder="Enter password">
+    <label for="">Mobile Number</label>
+    <input type="number" id="mobile" placeholder="Enter Mobile Number">
+    <button onclick="butfu()">Login</button>
+
+  </div>
+</body>
+
+</html>
+<script>
+  let p = JSON.parse(localStorage.getItem("datasign"))
+  console.log(p)
+
+  function butfu() {
+    let ob = {
+      email: document.querySelector("#emai").value,
+      password: document.querySelector("#psw").value,
+      mobile: document.querySelector("#mobile").value
+    }
+    for (var i = 0; i < p.length; i++) {
+      if (p[i].email == ob.email) {
+        if (p[i].passwor == ob.password) {
+          alert("login")
+        }
+        else {
+          alert("not login")
+        }
+      }
+      alert("worng email id")
+    }
+  }
+</script>

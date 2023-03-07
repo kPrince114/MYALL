@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>score board</title>
+</head>
+<style>
+  #first {
+    width: 40%;
+    height: 120px;
+    border: 1px solid none;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #second {
+    width: 40%;
+    height: 40px;
+    border: 1px solid none;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #second>h1 {
+    /* margin: auto; */
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  #first>div {
+    width: 30%;
+    height: 120px;
+    border: 2px solid;
+    background-color: red;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #first>div:nth-child(2) {
+    background-color: green;
+  }
+
+  #h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+  }
+
+
+  #third {
+    width: 25%;
+    height: 550px;
+    border: 1px solid none;
+    margin: auto;
+    margin-top: -30px;
+    font-size: 35px;
+
+
+  }
+
+  #input {
+    width: 97%;
+    height: 120px;
+    border: 2px solid;
+    background-color: darkgray;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #third>#for {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(3, 75px);
+    gap: 20px;
+
+  }
+
+  #third>#for>div {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #third>#for>div:nth-child(10) {
+    width: 90%;
+    height: 75px;
+    margin: auto;
+    margin-left: 106px;
+    background-color: chocolate;
+    font-size: 30px;
+  }
+
+  #third>#for>div:nth-child(1) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(2) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(3) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(1) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(4) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(5) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(6) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(7) {
+    background-color: coral;
+    font-size: 30px;
+
+  }
+
+  #third>#for>div:nth-child(8) {
+    background-color: coral;
+    font-size: 30px;
+  }
+
+  #third>#for>div:nth-child(9) {
+    background-color: coral;
+    font-size: 30px;
+  }
+
+  button {
+    padding: 10px 98px 10px 98px;
+    margin: auto;
+    font-size: 40px;
+    margin-left: 500px;
+    background-color: black;
+    color: white;
+    border: 0px;
+  }
+</style>
+
+<body>
+  <div id="first">
+    <div id="fi">43</div>
+    <div id="fi2">2019</div>
+  </div>
+  <div id="second">
+    <h1>MIN</h1>
+    <h1>MAX</h1>
+  </div>
+  <p id="h2">SCORE</p>
+  <div id="third">
+    <div id="input"></div>
+    <div id="for">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>0</div>
+    </div>
+  </div>
+  <button>ENTER</button>
+</body>
+
+</html>
+<script>
+  let keys = document.querySelectorAll("#for>div")
+  //console.log(keys)
+  let bag = ""
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", myclc)
+  }
+  function myclc(event) {
+    let targetNumber = event.target.innerText
+    bag = bag + targetNumber;
+    let mini = document.querySelector("#fi").innerText
+    let max = document.querySelector("#fi2").innerText
+    let d = document.querySelector("#input").innerText = bag;
+    document.querySelector("button").addEventListener("click", myinfun)
+    function myinfun() {
+      if (Number(mini) > Number(d)) {
+        document.querySelector("#fi").innerText = d;
+      }
+      if (Number(max) < Number(d)) {
+        document.querySelector("#fi2").innerText = d;
+      }
+      document.querySelector("#input").innerText = "";
+    }
+
+  }
+</script>

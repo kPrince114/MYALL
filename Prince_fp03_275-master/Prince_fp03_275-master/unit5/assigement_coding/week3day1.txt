@@ -1,0 +1,670 @@
+create database sb111;
+
+i) Table name DEPOSIT
+============================
+use sb111;
+
+create table Deposite(
+AcoNo varchar(25),
+CName varchar(20),
+BName varchar(20),
+Amount int,
+ADate date);
+
+desc Deposite;
+
+
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| AcoNo  | varchar(25) | YES  |     | NULL    |       |
+| CName  | varchar(20) | YES  |     | NULL    |       |
+| BName  | varchar(20) | YES  |     | NULL    |       |
+| Amount | int         | YES  |     | NULL    |       |
+| ADate  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+ii) Table name-BRANCH
+============================
+
+
+create table Branch(
+BName varchar (20),
+City varchar(20)
+);
+
+desc Branch;
+
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| BName | varchar(20) | YES  |     | NULL    |       |
+| City  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+
+
+iii) Table name-CUSTOMER
+===========================
+
+create table Customer(
+CName varchar (20),
+City varchar (20)
+);
+
+desc Customer;
+
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| CName | varchar(20) | YES  |     | NULL    |       |
+| City  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+
+iv) Table name-BORROW
+===========================
+
+create table Borrow(
+LoanNo varchar(5),
+CName varchar(20),
+BName varchar (20),
+Amount int
+);
+
+desc Borrow;
+
+
+
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| LoanNo | varchar(5)  | YES  |     | NULL    |       |
+| CName  | varchar(20) | YES  |     | NULL    |       |
+| BName  | varchar(20) | YES  |     | NULL    |       |
+| Amount | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+=================================================================================
+
+## Problem 2 :
+
+Insert the data for the following
+
+
+Deposite :
+============
+
+
+insert into deposite value(100, 'Anil', 'vrce', 1000.00, '1995-03-01');
+
+insert into deposite value(101, 'Sunil', 'mgroad', 5000.00, '1996-01-04');
+
+insert into deposite value(102, 'Rahul', 'karolbagh', 3500.00, '1995-11-17');
+
+insert into deposite value(103, 'Madhuri', 'chandni', 1200.00, '1995-12-17');
+
+insert into deposite value(104, 'Pramod', 'mgroad', 3000.00, '1996-03-27');
+
+insert into deposite value(105, 'Sandip', 'karolbagh', 2000.00, '1996-03-31');
+
+select * from Deposite;
+
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 100   | Anil    | vrce      |   1000 | 1995-03-01 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+
+
+=========================================================================
+
+
+Branch:
+=======
+
+
+insert into Branch value(
+'vrce', 'Nagpur');
+
+insert into Branch value(
+'karolbagh', 'Delhi');
+
+insert into Branch value(
+'chandni', 'Delhi');
+
+insert into Branch value(
+'mgroad', 'Bangalore');
+
+select * from Branch;
+
+
+
++-----------+-----------+
+| BName     | City      |
++-----------+-----------+
+| vrce      | Nagpur    |
+| karolbagh | Delhi     |
+| chandni   | Delhi     |
+| mgroad    | Bangalore |
++-----------+-----------+
+4 rows in set (0.00 sec)
+
+=====================================================================
+
+Borrow:
+==========
+
+insert into Borrow value(
+201, 'Anil', 'vrce', 1000.00);
+
+insert into Borrow value(
+206, 'Rahul', 'karolbagh', 5000.00);
+
+insert into Borrow value(
+311, 'Sunil', 'mgroad', 3000.00);
+
+insert into Borrow value(
+321, 'Madhuri', 'chandni', 2000.00);
+
+insert into Borrow value(
+375, 'Pramod', 'mgroad', 8000.00);
+
+select * from Borrow;
+
+
++--------+---------+-----------+--------+
+| LoanNo | CName   | BName     | Amount |
++--------+---------+-----------+--------+
+| 201    | Anil    | vrce      |   1000 |
+| 206    | Rahul   | karolbagh |   5000 |
+| 311    | Sunil   | mgroad    |   3000 |
+| 321    | Madhuri | chandni   |   2000 |
+| 375    | Pramod  | mgroad    |   8000 |
++--------+---------+-----------+--------+
+5 rows in set (0.00 sec)
+
+======================================================================
+
+Customer:
+==========
+
+
+insert into Customer value (
+'Anil', 'Calcuta');
+
+insert into Customer value (
+'Rahul', 'Baroda');
+
+insert into Customer value (
+'Madhuri', 'Nagpur');
+
+insert into Customer value (
+'Pramod', 'Nagpur');
+
+insert into Customer value (
+'Sunil', 'Delhi');
+
+select * from Customer;
+
+
++---------+---------+
+| CName   | City    |
++---------+---------+
+| Anil    | Calcuta |
+| Rahul   | Baroda  |
+| Madhuri | Nagpur  |
+| Pramod  | Nagpur  |
+| Sunil   | Delhi   |
++---------+---------+
+5 rows in set (0.00 sec)
+
+======================================================================
+
+Borrow:
+=========
+
+insert into Borrow value(
+201, 'Anil', 'vrce', 1000.00);
+
+insert into Borrow value(
+206, 'Rahul', 'karolbagh', 5000.00);
+
+insert into Borrow value(
+311, 'Sunil', 'mgroad', 3000.00);
+
+insert into Borrow value(
+321, 'Madhuri', 'chandni', 2000.00);
+
+insert into Borrow value(
+375, 'Pramod', 'mgroad', 8000.00);
+
+select * from Borrow;
+
+
++--------+---------+-----------+--------+
+| LoanNo | CName   | BName     | Amount |
++--------+---------+-----------+--------+
+| 201    | Anil    | vrce      |   1000 |
+| 206    | Rahul   | karolbagh |   5000 |
+| 311    | Sunil   | mgroad    |   3000 |
+| 321    | Madhuri | chandni   |   2000 |
+| 375    | Pramod  | mgroad    |   8000 |
+| 201    | Anil    | vrce      |   1000 |
+| 206    | Rahul   | karolbagh |   5000 |
+| 311    | Sunil   | mgroad    |   3000 |
+| 321    | Madhuri | chandni   |   2000 |
+| 375    | Pramod  | mgroad    |   8000 |
++--------+---------+-----------+--------+
+10 rows in set (0.00 sec)
+
+
+======================================================================
+
+
+4. Retrieve all the records from the table BORROW where the amount in between 2000 and 3000
+
+select * from Borrow where Amount BETWEEN 2000 and 3000;
+OR:
+select * from Borrow where Amount >=2000 && Amount <=3000;
+
++--------+---------+---------+--------+
+| LoanNo | CName   | BName   | Amount |
++--------+---------+---------+--------+
+| 311    | Sunil   | mgroad  |   3000 |
+| 321    | Madhuri | chandni |   2000 |
+| 311    | Sunil   | mgroad  |   3000 |
+| 321    | Madhuri | chandni |   2000 |
++--------+---------+---------+--------+
+4 rows in set (0.00 sec)
+
+======================================================================
+
+5. Retrieve the details from the table DEPOSIT
+
+select * from Deposite;
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 100   | Anil    | vrce      |   1000 | 1995-03-01 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+
+=================================================================
+
+6. Retrieve the customer name, account no of DEPOSIT
+
+select CName, AcoNo from Deposite;
+
+
+
++---------+-------+
+| CName   | AcoNo |
++---------+-------+
+| Anil    | 100   |
+| Sunil   | 101   |
+| Rahul   | 102   |
+| Madhuri | 103   |
+| Pramod  | 104   |
+| Sandip  | 105   |
++---------+-------+
+6 rows in set (0.00 sec)
+
+
+====================================================================
+
+7. Retrieve the name of the customer living in NAGPUR.
+
+
+select * from Customer where City = 'Nagpur';
+
+
++---------+--------+
+| CName   | City   |
++---------+--------+
+| Madhuri | Nagpur |
+| Pramod  | Nagpur |
++---------+--------+
+2 rows in set (0.00 sec)
+
+===================================================================
+
+8. Retrieve the name of the customers who opened accounts after 17-NOV-95.
+
+select CName from Deposite where ADate > '1995-11-17';
+
+
++---------+
+| CName   |
++---------+
+| Sunil   |
+| Madhuri |
+| Pramod  |
+| Sandip  |
++---------+
+4 rows in set (0.00 sec)
+
+
+================================================================
+
+9. Retrieve the account number and amount of the customer having an account opened between
+01-12-95 and 01-06.96.
+
+
+select AcoNo, Amount from Deposite where ADate Between '1995-12-01' and '1996-06-01';
+
+
++-------+--------+
+| AcoNo | Amount |
++-------+--------+
+| 101   |   5000 |
+| 103   |   1200 |
+| 104   |   3000 |
+| 105   |   2000 |
++-------+--------+
+4 rows in set (0.00 sec)
+
+=====================================================================
+
+10. Retrieve all the records from the table DEPOSIT where CNAME begins
+with C.
+
+select * from Deposite where CName like 'm%';
+
+
+Empty set (0.00 sec)
+
+
+=====================================================================
+
+11. Retrieve all the records from the table BORROW where the 2nd character of
+CNAME is U.
+
+
+select * from Borrow where CName like '_u%';
+
+
++--------+-------+--------+--------+
+| LoanNo | CName | BName  | Amount |
++--------+-------+--------+--------+
+| 311    | Sunil | mgroad |   3000 |
+| 311    | Sunil | mgroad |   3000 |
++--------+-------+--------+--------+
+2 rows in set (0.00 sec)
+
+
+=======================================================================
+
+12. Retrieve all the records from the table DEPOSIT where the branch name is
+CHANDNI or MG ROAD.
+
+select * from Deposite where BName in ('chandani', 'mgroad');
+
+
++-------+--------+--------+--------+------------+
+| AcoNo | CName  | BName  | Amount | ADate      |
++-------+--------+--------+--------+------------+
+| 101   | Sunil  | mgroad |   5000 | 1996-01-04 |
+| 104   | Pramod | mgroad |   3000 | 1996-03-27 |
++-------+--------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+
+=====================================================================
+
+
+13. Retrieve all the records from the table DEPOSIT where the branch name is not
+CHANDNI or MG ROAD.
+
+select * from Deposite where not BName in('Chandni', 'mgroad');
+
+
++-------+--------+-----------+--------+------------+
+| AcoNo | CName  | BName     | Amount | ADate      |
++-------+--------+-----------+--------+------------+
+| 100   | Anil   | vrce      |   1000 | 1995-03-01 |
+| 102   | Rahul  | karolbagh |   3500 | 1995-11-17 |
+| 105   | Sandip | karolbagh |   2000 | 1996-03-31 |
++-------+--------+-----------+--------+------------+
+3 rows in set (0.00 sec)
+
+=====================================================================
+
+14. Retrieve all the records from DEPOSIT where the amount > 1000 and arrange the customer name in
+ascending order.
+
+select * from Deposite where amount > 1000 order by CName asc;
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
++-------+---------+-----------+--------+------------+
+5 rows in set (0.00 sec)
+
+
+=======================================================================
+
+15. Retrieve all the records from DEPOSIT where the amount > 1000 and arrange the customer name in
+descending order.
+
+select * from Deposite where amount > 1000 order by CName desc;
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
++-------+---------+-----------+--------+------------+
+5 rows in set (0.00 sec)
+
+===================================================================
+
+16. Retrieve customer details from the BORROW table where the third character of
+the customer name is either ‘A’ or ‘D’.
+
+select * from Borrow where CName like '_a%' or '_d%';
+
+
++--------+---------+---------+--------+
+| LoanNo | CName   | BName   | Amount |
++--------+---------+---------+--------+
+| 321    | Madhuri | chandni |   2000 |
+| 375    | Pramod  | mgroad  |   8000 |
+| 321    | Madhuri | chandni |   2000 |
+| 375    | Pramod  | mgroad  |   8000 |
++--------+---------+---------+--------+
+4 rows in set (0.00 sec)
+
+
+=====================================================================
+
+17. Retrieve all the records from the table BORROW where the amount is not
+between 2000 and 8000.
+
+
+select * from Borrow where Amount not between 2000 and 8000;
+
+
++--------+-------+-------+--------+
+| LoanNo | CName | BName | Amount |
++--------+-------+-------+--------+
+| 201    | Anil  | vrce  |   1000 |
+| 201    | Anil  | vrce  |   1000 |
++--------+-------+-------+--------+
+2 rows in set (0.00 sec)
+
+
+=====================================================================
+
+18. Find out the unique records from the table DEPOSIT
+
+select distinct * from Deposite;
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 100   | Anil    | vrce      |   1000 | 1995-03-01 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.01 sec)
+
+=========================================================================
+
+19. Update the amount of all depositors in the deposit table by giving them 10% interest (i.e.
+amount=amount * 0.1) where the branch is VRCE.
+
+update deposite set amount = amount * 0.1 where BName = 'vrce';
+
+
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+select * from Deposite;
+
+
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 100   | Anil    | vrce      |   *100 | 1995-03-01 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+(*) = * is updated.
+
+=========================================================================
+
+20. Update the amount of all depositors in the deposit table by giving them 10% interest where
+the branch is VRCE and the customer name is ANIL.
+
+update deposite set amount = amount * 0.1 where BName = 'vrce' and CName = 'Anil';
+
+
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Deposite;
++-------+---------+-----------+--------+------------+
+| AcoNo | CName   | BName     | Amount | ADate      |
++-------+---------+-----------+--------+------------+
+| 100   | Anil    | vrce      |     10 | 1995-03-01 |
+| 101   | Sunil   | mgroad    |   5000 | 1996-01-04 |
+| 102   | Rahul   | karolbagh |   3500 | 1995-11-17 |
+| 103   | Madhuri | chandni   |   1200 | 1995-12-17 |
+| 104   | Pramod  | mgroad    |   3000 | 1996-03-27 |
+| 105   | Sandip  | karolbagh |   2000 | 1996-03-31 |
++-------+---------+-----------+--------+------------+
+6 rows in set (0.00 sec)
+
+===============================================================
+
+
+
+===============QUE-3===========================
+
+
+create table Student (
+Name varchar (20),
+RollNo int,
+Branch varchar (20),
+City varchar (20)
+);
+
+desc Student;
+
+
+mysql> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| Name   | varchar(20) | YES  |     | NULL    |       |
+| RollNo | int         | YES  |     | NULL    |       |
+| Branch | varchar(20) | YES  |     | NULL    |       |
+| City   | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+====================================================================
+
+insert into Student value (
+'Vijay', 150, 'CSE', 'Chennai');
+
+insert into Student value (
+'Sita', 202, 'ETC', 'Kolkata');
+
+insert into Student value (
+'Ravi', 300, 'EEE', 'Delhi');
+
+insert into Student value (
+'Basu', 165, 'ETC', 'Chennai');
+
+insert into Student value (
+'Rasmi', 107, 'ETC', 'RKL');
+
+insert into Student value (
+'Karan', 111, 'CSE', 'CTC');
+
+insert into Student value (
+'Rekha', 117, 'BME', 'BBSR');
+
+select * from Student;
+
+
++-------+--------+--------+---------+
+| Name  | RollNo | Branch | City    |
++-------+--------+--------+---------+
+| Vijay |    150 | CSE    | Chennai |
+| Sita  |    202 | ETC    | Kolkata |
+| Ravi  |    300 | EEE    | Delhi   |
+| Basu  |    165 | ETC    | Chennai |
+| Rasmi |    107 | ETC    | RKL     |
+| Karan |    111 | CSE    | CTC     |
+| Rekha |    117 | BME    | BBSR    |
++-------+--------+--------+---------+
+7 rows in set (0.00 sec)
+
+=======================================================================
+
+
+1. Count the number of students in each department.
+

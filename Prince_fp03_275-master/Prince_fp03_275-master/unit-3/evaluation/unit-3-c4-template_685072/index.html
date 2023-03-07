@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News App</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #navbar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: rgb(166, 166, 246);
+    position: sticky;
+    top: 0px;
+  }
+  #navbar>input {
+    width: 70%;
+    height: 50%;
+    margin-left: 40px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    /* padding: -20px 20px -20px 20px ; */
+
+  }  
+  #navbar>button {
+    width: 7%;
+    height: 40px;
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 21px;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* padding: -20px 20px -20px 20px ; */
+
+  }  
+
+  #maindiv {
+    width: 100%;
+    min-height: 500px;
+    border: 1px solid red;
+    display: flex;
+  }
+
+  #maindiv>div:nth-child(1) {
+    width: 15%;
+    height: 500px;
+    border: 1px solid green;
+    position: sticky;
+    top: 90px;
+    left: 0px;
+    /* background-color: rgb(123, 153, 123); */
+  }
+  #maindiv>div:nth-child(1)>h3{
+    width: 80%;
+    height: 26px;
+    background-color: green;
+  }
+
+  #show_news {
+    width: 83%;
+    border: 0px solid red;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #show_news>div{
+    display: flex;
+    margin-top: 20px;
+  }
+  #show_news>div>div:nth-child(1){
+    width: 20%;
+  }
+  #show_news>div>div:nth-child(2){
+    width: 77%;
+    margin-left: 10px;
+  }
+  #show_news>div>div:nth-child(1)>img {
+    width: 100%;
+    height: 100%;
+  }
+  #show_news>div>div:nth-child(2)h5 {
+    font-size: 20px;
+  }
+  #show_news>div>div:nth-child(2)>h5:nth-child(1) {
+    columns: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  
+</style>
+
+<body>
+  <div id="navbar">
+    <h3>News App</h3>
+    <input type="text"  id="search">
+    <button onclick="fun()"> click </button>
+    <!-- <p>prince</p> -->
+  </div>
+  <div id="maindiv">
+    <div id="sidebar">
+      <h3 id="in">India</h3>
+      <h3 id="us">USA</h3>
+      <h3 id="nz">Newzeland</h3>
+      <h3 id="uk">UK</h3>
+      <h3 id="ch">China</h3>
+    </div>
+    <div id="show_news"></div>
+    <div>
+  </div>
+  </div>
+</body>
+
+</html>
+<script>
+  async function newsall(coun) {
+    let bag = coun;
+    
+    if (coun == "newzeland") {
+      bag = "nz"
+    }
+    try {
+      console.log(bag);
+      let res = await fetch(`https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${bag}`);
+      let data = await res.json();
+      console.log(data.articles);
+      appendProducts(data.articles);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  async function new1(coun) {
+    let bag = coun;
+    try {
+      console.log(bag);
+      let res = await fetch(`https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${bag}`);
+      let data = await res.json();
+      console.log(data.articles);
+      appendProducts(data.articles);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  new1("in")
+  let maindiv = document.getElementById("show_news")
+  let appendProducts = (data) => {
+    console.log(data);
+    maindiv.innerHTML = null;
+    data.forEach((ele) => {
+      let div1 = document.createElement("div");
+      let img = document.createElement('img');
+      img.src = ele.urlToImage;
+      let div2 = document.createElement("div");
+      let title = document.createElement('h5');
+      title.innerText = ele.title;
+      let author = document.createElement('h5');
+      author.innerText = ele.content;
+      let div3 = document.createElement("div")
+      div2.append(title, author)
+      div1.append(img)
+      div3.append(div1, div2)
+      // div3.addEventListener("click", function () {
+        
+      // });
+      maindiv.append(div3)
+    });
+  }
+  
+  async function fun() {
+    let quary = document.querySelector("#search").value;
+    console.log(quary)
+    try {
+      console.log(quary);
+      let res = await fetch(`https://masai-api.herokuapp.com/news?q=${quary}`);
+      let data = await res.json();
+      console.log(data.articles);
+        localStorage.setItem("news", JSON.stringify(data.articles))
+         window.location.href = "news.html";
+      // appendProducts(data.articles);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  document.getElementById("in").addEventListener("click", function () {
+    selectFUn("in")
+  })
+  document.getElementById("us").addEventListener("click", function () {
+    selectFUn("us")
+  })
+  document.getElementById("ch").addEventListener("click", function () {
+    selectFUn("ch")
+  })
+  document.getElementById("nz").addEventListener("click", function () {
+    selectFUn("nz")
+  })
+  document.getElementById("uk").addEventListener("click", function () {
+    selectFUn("uk")
+  })
+  function selectFUn(query) {
+    newsall(query)
+  }
+</script>

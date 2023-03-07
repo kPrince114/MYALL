@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loginPage</title>
+</head>
+ <style>
+     body{
+        background-color: rgb(60, 147, 182);
+     }
+     #main{
+         padding: 5px;
+         width: 38%;
+         height: auto;
+         border-radius: 15px;
+         margin: auto;
+         border-color: transparent;
+         background-color: white;
+     }
+     #main>h1{
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 90px;
+        font-size:50px;
+     }
+     #main>input{
+         display: flex;
+         margin: 30px 30px 30px;
+         width: 80%;
+         height: 40px;
+     }
+     #main>p{
+        /* margin-bottom: 10px; */
+         text-align: center;
+     }
+     /* p+P{
+        margin-bottom: 10px;
+     } */
+   
+  
+    label{
+        margin-left: 10px;
+    }
+ 
+    #pass{
+        margin-top: 80px; 
+    }
+    #submit {
+        width: 80%;
+        cursor: pointer;
+        text-align: center;
+        margin-left: 35px;
+        background-color: rgb(39, 39, 93);
+        color: white;   
+        padding: 20px 50px 20px 50px;
+        border-color: transparent;
+        border-radius: 10px;
+
+    }
+   
+ </style>
+<body>
+    <div id="main">
+        <h1>Login</h1>
+        <label for="Email">Email</label>
+        <input type="email">
+        <label for="password">Password</label>
+        <input type="text">
+        <button id="submit">Login</button>
+        <p id="pass">Forget <a href="password">Password</a>?</p>
+        <p id="sign">Don't have an account? <a href="sign">Sign up</a></p>
+    </div>
+</body>
+</html>
+
+
+
+

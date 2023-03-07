@@ -1,0 +1,9 @@
+
+
+
+**Develop a multithreaded application in which**
+
+1.- From the main method create an empty List of cities and pass this empty city list to the child thread
+
+2.- The child thread should add 4 cities inside this List by taking input from the user.
+3.- Once the child Thread added the cities to that List then the main thread should print all the cities added by the child thread one by one.

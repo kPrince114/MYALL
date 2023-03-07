@@ -1,0 +1,19 @@
+
+Create a Product bean class with the following properties:
+
+```java
+productId
+productName
+price
+quantity
+```
+
+From the main method of the Demo class performs the following operations:
+
+1. Create a List of 5 product objects.
+2. From the product list filter the products whose quantity is more than 10 in a
+separate List of Products.
+3. Sort the Filtered List of Products by the price in ascending order.
+4. Print all the products one by one from both Lists (original list and Filtered list)
+Note: for filtering and printing and sorting make use of Stream or Lambda
+expressions.

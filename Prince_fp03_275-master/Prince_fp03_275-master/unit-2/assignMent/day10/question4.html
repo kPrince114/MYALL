@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>masai mentor</title>
+</head>
+<style>
+  #con {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+  }
+
+  #con>div {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+  }
+
+  p+img {
+    width: 130px;
+    height: 100px;
+    margin-top: -40px;
+    margin-left: 75px;
+  }
+
+  img+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-right: 30px;
+    margin-top: 4px;
+  }
+
+  h2+p {
+    text-align: center;
+    font-size: 22px;
+    color: darkgray;
+    margin-top: -10px;
+    margin-right: 30px;
+  }
+</style>
+
+<body>
+  <div id="con">
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  let mentor = [
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+    {
+      img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+      name: "Vijay Shekhar Sharma",
+      con: "Founder & CEO",
+      imgo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+    },
+
+  ]
+
+  mentor.forEach(function (ele) {
+    let boxes = document.createElement("div");
+    let imgs = document.createElement("img")
+    imgs.setAttribute("src", ele.img)
+    let mentor = document.createElement("h2")
+    mentor.innerText = ele.name;
+    let mentorcom = document.createElement("p")
+    mentorcom.innerText = ele.con;
+    let imgse = document.createElement("img")
+    imgse.setAttribute("src", ele.imgo)
+    boxes.append(imgs, mentor, mentorcom, imgse);
+    document.querySelector("#con").append(boxes);
+  });
+  console.log(mentor.length)
+</script>

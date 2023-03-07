@@ -1,0 +1,88 @@
+#first {
+  width: 30%;
+  height: 300px;
+  display: flex;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 300px);
+  gap: 20px; */
+  justify-content: center;
+  align-items: center;
+  border: 1px solid green;
+  /* margin: auto; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* input[type="text"],
+select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
+input[type="Number"],
+select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  /* margin-top: -10px; */
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* box-sizing: border-box; */
+}
+input[type="submit"],
+select:last-child {
+  padding: 10px 30px 10px 30px;
+  border-radius: 5px;
+  /* margin-left: 27px; */
+  background-color: rgb(24, 235, 24);
+}
+label {
+  color: green;
+  font-size: 20px;
+}
+#report {
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 300px);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid none;
+}
+#report > div {
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  /* border: 1px solid red; */
+}
+#report > div > h1 {
+  font-size: 32px;
+  font-family: sans-serif;
+  margin-left: 12px;
+  margin-top: 26px;
+}
+#report > div > p {
+  font-size: 22px;
+  font-family: sans-serif;
+  margin-left: 12px;
+  margin-top: 26px;
+}
+#report > div > button {
+  font-size: 16px;
+  font-family: sans-serif;
+  margin-left: 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

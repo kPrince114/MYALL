@@ -1,0 +1,7 @@
+	
+	## Program 3:
+
+	Create a multi-threaded application in which 
+	2 different threads run on a single object of a 
+	class which will print both thread names 10 times.
+	

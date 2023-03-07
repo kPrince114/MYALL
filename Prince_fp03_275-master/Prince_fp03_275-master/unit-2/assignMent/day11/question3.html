@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>men and women</title>
+</head>
+<style>
+  #con {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 550px);
+    gap: 20px;
+  }
+
+  #con>div>img {
+    /* margin-top: 90px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+  }
+</style>
+
+<body>
+  <div id="con">
+
+  </div>
+</body>
+
+</html>
+<script>
+  let men = [
+    {
+      img: "https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2020/7/8/89f1bd9d-3a28-456d-888a-beff717a06f81594222908155-Shirts.jpg",
+      price: "Rs.1000",
+      dis: "50%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2020/7/8/89f1bd9d-3a28-456d-888a-beff717a06f81594222908155-Shirts.jpg",
+      price: "Rs.1000",
+      dis: "60%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2020/7/8/89f1bd9d-3a28-456d-888a-beff717a06f81594222908155-Shirts.jpg",
+      price: "Rs.1000",
+      dis: "40%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2020/7/8/89f1bd9d-3a28-456d-888a-beff717a06f81594222908155-Shirts.jpg",
+      price: "Rs.1000",
+      dis: "30%OFF",
+      button: "Add To Cart",
+    }
+  ]
+  let women = [
+    {
+      img: "https://content.shop4reebok.com/static/Product-GL2296/reebok_GL2296_1.jpg.plp",
+      price: "Rs.1000",
+      dis: "50%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://content.shop4reebok.com/static/Product-GL2296/reebok_GL2296_1.jpg.plp",
+      price: "Rs.1000",
+      dis: "50%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://content.shop4reebok.com/static/Product-GL2296/reebok_GL2296_1.jpg.plp",
+      price: "Rs.1000",
+      dis: "50%OFF",
+      button: "Add To Cart",
+    },
+    {
+      img: "https://content.shop4reebok.com/static/Product-GL2296/reebok_GL2296_1.jpg.plp",
+      price: "Rs.1000",
+      dis: "50%OFF",
+      button: "Add To Cart",
+    },
+  ]
+  men.forEach(function (ele) {
+    let boxes = document.createElement("div");
+    let imgs = document.createElement("img")
+    imgs.setAttribute("src", ele.img)
+    // imgs.style.boxShadow = boxes;
+    let price = document.createElement("h2")
+    price.innerText = ele.price;
+    let dis = document.createElement("h2")
+    dis.innerText = ele.dis;
+    dis.style.color = "green";
+    let buto = document.createElement("button")
+    buto.innerText = ele.button;
+    boxes.append(imgs, price, dis, buto);
+    document.querySelector("#con").append(boxes);
+    document.querySelector("button").onclick = function () {
+      location.href = "https://www.myntra.com/tshirts/puma/puma-men-black-graphic-17-brand-logo-printed-t-shirt/13887524/buy";
+    }
+  });
+  women.forEach(function (ele) {
+    let boxe = document.createElement("div");
+    let imgs = document.createElement("img")
+    imgs.setAttribute("src", ele.img)
+    let price = document.createElement("h2")
+    price.innerText = ele.price;
+    let dis = document.createElement("h2")
+    dis.innerText = ele.dis;
+    dis.style.color = "green";
+    let buto = document.createElement("button")
+    buto.innerText = ele.button;
+    boxe.append(imgs, price, dis, buto);
+    document.querySelector("#con").append(boxe);
+    document.querySelector("button").onclick = function () {
+      location.href = "https://www.myntra.com/tights/nike/nike-black-dri-fit-swoosh-run-womens-78-length-mid-rise-running-leggings/16535782/buy";
+    }
+  });
+
+  console.log(men.length);
+</script>

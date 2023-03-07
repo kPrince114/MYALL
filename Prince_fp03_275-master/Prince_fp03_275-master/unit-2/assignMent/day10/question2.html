@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>question2</title>
+</head>
+<style>
+  h1 {
+    color: antiquewhite;
+  }
+</style>
+
+<body>
+</body>
+
+</html>
+<script>
+  document.querySelector("body").style.borderColor = "red";
+
+  var btnarr = [
+    { name: "primary", col: "white", bg: "blue", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "secondary", col: "white", bg: "gray", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "Success", col: "white", bg: "green", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "danger", col: "white", bg: "red", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "warming", col: "black", bg: "yellow", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "info", col: "white", bg: "aqua", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "light", col: "black", bg: "white", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "dark", col: "white", bg: "black", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" },
+    { name: "link", col: "blue", bg: "white", pad: "15px 20px 15px 20px", fon: "29px", mar: "20px", rad: "10px", fontf: "sans-serif" }
+  ]
+  for (var i = 0; i < btnarr.length; i++) {
+    let btn = document.createElement("button");
+    btn.innerText = btnarr[i].name;
+    btn.style.color = btnarr[i].col;
+    btn.style.background = btnarr[i].bg;
+    btn.style.padding = btnarr[i].pad;
+    btn.style.fontSize = btnarr[i].fon;
+    btn.style.marginLeft = btnarr[i].mar
+    btn.style.borderRadius = btnarr[i].rad;
+    btn.style.fontFamily = btnarr[i].fontf;
+
+    document.querySelector("body").append(btn)
+  }
+</script>

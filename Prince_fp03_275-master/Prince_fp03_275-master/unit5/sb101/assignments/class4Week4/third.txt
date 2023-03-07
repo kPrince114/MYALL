@@ -1,0 +1,16 @@
+Q3/- Write a Jdbc application to establish the connection with the Mysql database.
+
+answer:--
+
+1:- Load the jdbc driver related main class into the memory;
+
+2:- download/get the Jdbc driver related jar file (mysql-connector.jar) from the 
+	internat and set that jar file inside the classpath of our java application;
+
+3:-Establish the connection;
+
+4:-after performing the CRUD operation close the connection.;
+
+5:-  Prepare the connection String;
+
+

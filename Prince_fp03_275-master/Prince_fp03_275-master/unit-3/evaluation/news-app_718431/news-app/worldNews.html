@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World News</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #navbar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(168, 141, 92);
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0px;
+  }
+
+  #navbar>div:nth-child(1) {
+    width: 50%;
+    height: 100%;
+    border: 0px solid red;
+  }
+
+  #navbar>div:nth-child(1)>input {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 80px 10px 0px;
+    border: 1px solid green;
+  }
+
+  #navbar>div:nth-child(2) {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    border: 0px solid red;
+  }
+
+  #navbar>div:nth-child(2)>h3 {
+    margin-left: 70px;
+    color: brown;
+    cursor: pointer;
+  }
+
+  #maindiv {
+    width: 100%;
+    min-height: 800px;
+    border: 1px solid red;
+    display: flex;
+  }
+
+  #maindiv>div:nth-child(1) {
+    width: 23%;
+    height: 500px;
+    border: 0px solid green;
+    position: sticky;
+    top: 90px;
+    left: 0px;
+    background-color: rgb(123, 153, 123);
+  }
+
+  #news_container {
+    width: 73%;
+    border: 0px solid red;
+    margin-left: 10px;
+    margin-top: 100px;
+  }
+
+  #news_container>div {
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+  }
+
+  #news_container>div>div:nth-child(1) {
+    width: 30%;
+  }
+
+  #news_container>div>div:nth-child(2) {
+    width: 70%;
+  }
+
+  #news_container>div>div:nth-child(1)>img {
+    width: 90%;
+    height: 90%;
+  }
+</style>
+
+<body>
+  <div>
+    <div id="navbar">
+      <div>
+        <input type="text" placeholder="Enter input" onkeypress="enter(event)" id="search">
+      </div>
+      <div>
+        <h3 id="in">India</h3>
+        <h3 id="us">USA</h3>
+        <h3 id="nz">Newzeland</h3>
+        <h3 id="uk">UK</h3>
+        <h3 id="ch">China</h3>
+      </div>
+    </div>
+  </div>
+  <div>
+    <!-- Sidebar will have
+         - Image of user (Id:- "image")
+         - Name of user (Id:- "name")
+        - Email of user (Id:- "email")
+         - Country of user (Id:- "country) -->
+  </div>
+  <div id="maindiv">
+    <div id="sidebar">
+    </div>
+    <div id="news_container"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  let detail = JSON.parse(localStorage.getItem("user"))
+  console.log(detail);
+  display(detail)
+  function display(detail) {
+    detail.forEach(function (ele) {
+      let image = document.createElement("img")
+      image.src = ele.url;
+      let name = document.createElement("h3")
+      name.innerText = ele.name;
+      let email = document.createElement("h3")
+      email.innerText = ele.email;
+      let country = document.createElement("h3")
+      country.innerText = ele.country;
+      newsall(ele.country)
+      document.getElementById("sidebar").append(image, name, email, country)
+    });
+  }
+  async function newsall(coun) {
+    let bag = "";
+    for (var i = 0; i < 2; i++) {
+      bag = bag + coun[i]
+    }
+    if (coun == "newzeland") {
+      bag = "nz"
+    }
+    try {
+      console.log(bag);
+      let res = await fetch(`https://masai-mock-api-2.herokuapp.com/news/top-headlines?country=${bag}`);
+      let data = await res.json();
+      console.log(data.articles);
+      appendProducts(data.articles);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  let maindiv = document.getElementById("news_container")
+  let appendProducts = (data) => {
+    console.log(data);
+    maindiv.innerHTML = null;
+    data.forEach((ele) => {
+      let div1 = document.createElement("div");
+      let img = document.createElement('img');
+      img.src = ele.urlToImage;
+      let div2 = document.createElement("div");
+      let title = document.createElement('h5');
+      title.innerText = ele.title;
+      let author = document.createElement('h5');
+      author.innerText = ele.author;
+      let div3 = document.createElement("div")
+      div2.append(title, author)
+      div1.append(img)
+      div3.append(div1, div2)
+      div3.addEventListener("click", function () {
+        let array1 = []
+        array1.push(ele)
+        localStorage.setItem("news", JSON.stringify(array1))
+        window.location.href = "news.html";
+      });
+      maindiv.append(div3)
+    });
+  }
+  async function enter(event) {
+    try {
+      let quary = document.querySelector("#search").value;
+      console.log(quary);
+      let res = await fetch(`https://masai-mock-api-2.herokuapp.com/news?q=${quary}`);
+      let data = await res.json();
+      console.log(data.articles);
+      appendProducts(data.articles);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  document.getElementById("in").addEventListener("click", function () {
+    selectFUn("in")
+  })
+  document.getElementById("us").addEventListener("click", function () {
+    selectFUn("us")
+  })
+  document.getElementById("ch").addEventListener("click", function () {
+    selectFUn("ch")
+  })
+  document.getElementById("nz").addEventListener("click", function () {
+    selectFUn("nz")
+  })
+  document.getElementById("uk").addEventListener("click", function () {
+    selectFUn("uk")
+  })
+  function selectFUn(query) {
+    newsall(query)
+  }
+</script>

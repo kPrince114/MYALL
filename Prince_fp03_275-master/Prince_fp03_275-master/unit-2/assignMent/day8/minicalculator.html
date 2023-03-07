@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="first" type="number" placeholder="Enter first number">
+  <input id="second" type="number" placeholder="Enter second number">
+  <hr>
+  <button onclick="Add()">add</button>
+  <button onclick="sub()">subtract</button>
+  <button onclick="mul()">multiplication</button>
+  <button onclick="div()">divide</button>
+  <hr>
+  <h1 id="ans">answer here now</h1>
+</body>
+
+</html>
+<script>
+  function Add() {
+    let one = document.getElementById("first").value;
+    let two = document.getElementById("second").value;
+    console.log(one, two);
+    let sum = Number(one) + Number(two);
+    document.getElementById("ans").innerText = sum;
+  }
+  function sub() {
+    let one = document.getElementById("first").value;
+    let two = document.getElementById("second").value;
+    console.log(one, two);
+    let subr = Number(one) - Number(two);
+    document.getElementById("ans").innerText = subr;
+  }
+  function mul() {
+    let one = document.getElementById("first").value;
+    let two = document.getElementById("second").value;
+    console.log(one, two);
+    let mult = Number(one) * Number(two);
+    document.getElementById("ans").innerText = mult;
+  }
+  function div() {
+    let one = document.getElementById("first").value;
+    let two = document.getElementById("second").value;
+    console.log(one, two);
+    let divd = Number(one) / Number(two);
+    document.getElementById("ans").innerText = divd;
+  }
+</script>

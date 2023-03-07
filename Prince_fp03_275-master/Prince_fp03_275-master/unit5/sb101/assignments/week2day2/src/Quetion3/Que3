@@ -1,0 +1,11 @@
+## **Problem 3 :**
+
+**Create a multithreaded application in which start 2 threads:**
+
+1. Salman thread:
+2. Hritik thread:
+- Salman Thread should print all the even numbers starting from 0 to 20
+- Hritik Thread should print all the odd numbers starting from 0 to 20.
+- Both threads should print the number by taking a 1-second pause.
+
+**Note:** Salman Thread should wait until the complete execution of the Hritik Thread. (make use of the Join method)

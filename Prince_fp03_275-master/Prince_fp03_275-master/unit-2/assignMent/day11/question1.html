@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>first</title>
+</head>
+
+<body>
+  <form id="f" action="">
+    <label for="">student Name</label><br>
+    <input id="on1" type="text" placeholder="Name"><br>
+    <label for="">Age</label><br>
+    <input id="on2" type="text" placeholder="Age"><br>
+    <label for="">GENDER</label><br>
+    <select id="gen">
+      <option value=""></option>
+      <option value="male">male</option>
+      <option value="femail">femail</option>
+    </select>
+    <br>
+    <label for="">Email</label><br>
+    <input id="on3" type="email" placeholder="Email"><br>
+    <label for="">Mobile number</label><br>
+    <input id="on4" type="Number" placeholder="Number"><br>
+    <input type="submit">
+  </form>
+  <h1 id="h1"></h1>
+  <h2 id="h2"></h2>
+  <h3 id="h3"></h3>
+  <h4 id="h4"></h4>
+  <h5 id="h5"> </h5>
+</body>
+
+</html>
+<script>
+  //localStorage.setItem("pas", "prince")
+  let arr = [];
+  document.querySelector("form").addEventListener("submit", myfunction);
+  function myfunction(event) {
+    event.preventDefault()
+    let obj = {
+      name: document.querySelector("#on1").value,
+      age: document.querySelector("#on2").value,
+      gender: document.querySelector("#gen").value,
+      email: document.querySelector("#on3").value,
+      mob_num: document.querySelector("#on4").value
+    }
+    arr.push(obj);
+    console.log(arr)
+  }
+</script>

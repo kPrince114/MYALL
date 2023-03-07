@@ -1,0 +1,28 @@
+## Program 5:
+
+**Consider the following class:**
+
+public class A{
+
+public void sayHello(String name){
+
+System.out.println(“Welcome :”);
+
+try{
+
+Thread.sleep(2000);
+
+}catch(Exception e){
+
+e.printStackTrace();
+
+}
+
+System.out.println(name);
+
+}
+
+}
+
+- **Call the above sayHello method of a single A class object from the 3 threads in such a way
+	 that we should get the regular output**

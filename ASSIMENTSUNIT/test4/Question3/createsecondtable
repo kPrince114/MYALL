@@ -1,0 +1,19 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class createsecondtable {
+    public static void main(String[] args) {
+        try(Connection conn= commonFun.provideConnection()) {
+                   Statement stmt = con.createStatement();
+                   String sql="CREATE TABLE room (roomNumber int primary key,RoomType varchar(12) not null,pricePerNight double, maximumPerson int,empty boolean)";
+                 
+                   stmt.executeUpdate(sql);
+                   System.out.println("Created table room in given database...");
+                   //con.close();
+           } catch (Exception e) {
+               e.printStackTrace();
+               
+           }
+    }
+}

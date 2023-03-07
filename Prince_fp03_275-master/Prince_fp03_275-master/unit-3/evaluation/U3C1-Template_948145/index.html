@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  #menu>button {
+    /* width: 20%; */
+    text-align: center;
+    cursor: pointer;
+    color: green;
+    margin-left: 45%;
+    /* border: 1px solid red; */
+  }
+
+
+  body>div>h2 {
+    text-align: center;
+
+    /* border: 1px solid red; */
+  }
+
+  form {
+    width: 30%;
+    height: 220px;
+    margin: auto;
+    border: 1px solid red;
+  }
+
+  input {
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+
+  #add_product {
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 20px;
+  }
+</style>
+
+<body>
+  <div id="menu">
+    <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
+    <a href="inventory.html"><button id="show_products">Show product</></a>
+
+  </div>
+  <div>
+    <h2>Add Products</h2>
+    <form action="" id="product_form" onsubmit="nickproduct(event)">
+      <label for="">name</label>
+      <input type="text" placeholder="name" id="product_name"><br>
+      <label for="">brand</label>
+      <input type="text" id="product_brand" placeholder="brand"><br>
+      <label for="">image_url</label>
+      <input type="text" placeholder="image_url" id="product_image"><br>
+      <!-- url vi ho sakata h.. -->
+      <label for="">price</label>
+      <input type="number" placeholder="price" id="product_price"><br>
+      <!-- <input id="add_product" type="submit"> -->
+      <button onclick="fun()" id="add_product">add product</button>
+    </form>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<script src="./scripts/index.js"></script>

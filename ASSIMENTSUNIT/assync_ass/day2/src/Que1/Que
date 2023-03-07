@@ -1,0 +1,59 @@
+# Day 2 Assignment
+
+## Problem 1 :
+
+Implement the following method of a functional interface using the method reference.
+
+```java
+Interface Demo{
+public int convetStringToNumber(String s);
+}
+```
+
+## Problem 2 :
+
+Implement the following method of a functional interface using the method reference.
+
+```java
+Interface Demo{
+public void printDetail(Student student);
+}
+```
+
+Refer Following method references to print Student detail using the method reference
+
+1. using non-static method
+2. using static method
+3. using constructor
+
+## Problem 3 :
+
+Implement the following interface using Lambda Expression.
+
+```java
+interface PrintList {
+abstract void display(List<String> city);
+}
+```
+
+From the main method, call the above method by supplying a List of 5 cities.
+
+## Problem 4 :
+
+Implement the following method of a functional interface using the method reference.
+
+```java
+public interface Intr {	
+	public List<Student> findStudent(List<Student> stu);
+}
+```
+
+Take 10 Student objects list and pass the list to findStudent(List<Student> stu) method and return only those students list whose marks are less than 500 and Print the result.
+
+**Note:** Do this using Lambda Expression.
+
+## **Problem 5 :**
+
+Sort the following Map by its key (by Student name in descending order), using Lambda expressions. 
+
+In this Map key will be the Country name and the value will be the Student object

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>sorry i don't have more time so i put some value reason:-health is not good</h2>
+  <hr>
+  <br>
+  <h4 id="des1"></h4>
+  <h4 id="des2"></h4>
+  <h4 id="des3"></h4>
+  <h4 id="des4"> </h4>
+  <h4 id="des5"></h4>
+  <h4 id="des6"></h4>
+  <select id="continent_select">
+    <option value="India"> India </option>
+    <option value="United"> United States of America </option>
+    <option value="China"> China</option>
+    <option value="Nepal"> Nepal </option>
+    <option value="Australia"> Australia </option>
+    <option value="France"> France </option>
+  </select>
+  <button onclick="one()">Now Chick</button>
+</body>
+
+</html>
+<script>
+  function one() {
+    let desh = document.querySelector("#continent_select").value
+    console.log(typeof desh)
+    if (desh == "India") {
+      document.querySelector("#des1").innerText = "The continent is Asia";
+    }
+    else if (desh == "United") {
+      document.querySelector("#des2").innerText = "The continent is North and Central America";
+    }
+    else if (desh == "China") {
+      document.querySelector("#des2").innerText = "The continent is Asia";
+    }
+    else if (desh == "Nepal") {
+      document.querySelector("#des2").innerText = "The continent is Asia";
+    }
+    else if (desh == "Australia") {
+      document.querySelector("#des2").innerText = "The continent is Oceania";
+    }
+    else if (desh == "France") {
+      document.querySelector("#des2").innerText = "The continent is Europe";
+    }
+
+
+  }
+
+</script>

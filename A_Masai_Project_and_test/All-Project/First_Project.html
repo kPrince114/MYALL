@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web20 C2</title>
+  <style>
+    /* Write all the necessery css here  */
+    h1 {
+      text-align: center;
+    }
+
+    #top>div {
+      width: 90%;
+      height: 200px;
+      border: 1px solid none;
+      margin: auto;
+      display: flex;
+    }
+
+    #top>div>div {
+      width: 17%;
+      height: 180px;
+      border: 1px solid none;
+    }
+
+    #top>div>div>img {
+      width: 93%;
+      height: 100%;
+    }
+
+    #top>div>div>h3 {
+      text-align: center;
+      margin-top: -5px;
+    }
+
+    #mid>h1 {
+      text-align: left;
+      margin-left: 100px;
+      /* padding-left: 70px; */
+    }
+
+    #mid>div {
+      width: 80%;
+      height: 200px;
+      border: 1px solid none;
+      margin: auto;
+    }
+
+    #mid>div>img {
+      width: 11%;
+      height: 80%;
+      margin-left: 7px;
+    }
+
+    #bottom>div {
+      width: 70%;
+      height: 900px;
+      border: 1px solid none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 430px);
+      gap: 20px 10px;
+      margin: auto;
+    }
+
+    #bottom>div>div {
+      border: 1px solid none;
+      background-color: rgba(255, 166, 0, 0.637);
+    }
+
+    #bottom>div>div>img {
+      width: 100%;
+      height: 90%;
+      /* margin-bottom: 20px; */
+
+    }
+
+    /* #bottom>div>div>div {
+            width: 100%;
+            height: 45px;
+            border: 1px solid none;
+            margin-top: -20px;
+            background-color: rgba(218, 145, 10, 0.767);
+            ;
+
+        } */
+
+    #bottom>div>div>p {
+      /* margin-top: -4px; */
+      /* margin-top: 20px; */
+      text-align: center;
+
+    }
+
+    @media all and (min-width: 401px) and (max-width: 800px) {
+      #top>h1 {
+        font-size: 24px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      #top>div {
+        width: 90%;
+        height: 300px;
+        margin: auto;
+        /* display: flex; */
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: repeat(2, 50%);
+        /* gap: 10px; */
+        border: 1px solid none;
+      }
+
+      #top>div>div {
+        border: 1px solid none;
+      }
+
+      #top>div>div>img {
+        width: 550%;
+        height: 70%;
+      }
+
+      #top>div>div>h3 {
+        padding-top: 4px;
+        margin-left: 50px;
+        margin-top: -5px;
+        font-size: 16px;
+      }
+
+      #mid>h1 {
+        text-align: left;
+        font-size: 15px;
+        margin-left: 60px;
+      }
+
+      #mid>div {
+        width: 80%;
+        height: 300px;
+        border: 1px solid none;
+        display: grid;
+        grid-template-columns: repeat(4, 23%);
+        grid-template-rows: repeat(2, 150px);
+        /* gap: -20px 10px; */
+        margin: auto;
+      }
+
+      #mid>div>img {
+        margin-top: -1px;
+        width: 100%;
+        height: 80%;
+        margin-right: 10px;
+        /* margin-left: 7px; */
+      }
+
+      #bottom>h1 {
+        font-size: 24px;
+      }
+
+      #bottom>div {
+        width: 80%;
+        height: 900px;
+        border: 1px solid none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 300px);
+        gap: 20px 10px;
+        margin: auto;
+      }
+
+      #bottom>div>div {
+        border: 1px solid none;
+        background-color: rgba(255, 166, 0, 0.637);
+      }
+
+      #bottom>div>div>img {
+        width: 100%;
+        height: 90%;
+        /* margin-bottom: 20px; */
+
+      }
+
+      #bottom>div>div>p {
+        /* margin-top: -4px; */
+        /* margin-top: 20px; */
+        text-align: center;
+        margin-top: 2px;
+
+      }
+
+
+    }
+
+    /* Small screens */
+    @media all and (min-width: 100px) and (max-width: 400px) {
+      #top>div {
+        width: 60%;
+        height: 300px;
+        margin: auto;
+        /* display: flex; */
+        border: 1px solid none;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(4, 25%);
+        /* gap: 10px; */
+        border: 1px solid none;
+      }
+
+      #top>div>div {
+        border: 1px solid none;
+        /* width: 100%; */
+
+      }
+
+      #top>div>div>img {
+        width: 550%;
+        height: 34%;
+      }
+
+      #top>div>div>h3 {
+
+        margin-left: 20px;
+
+        font-size: 16px;
+      }
+
+      #mid>h1 {
+        text-align: left;
+        font-size: 15px;
+        margin-right: 50px;
+        margin-left: 60px;
+        margin-top: -40px;
+      }
+
+      #mid>div {
+        width: 60%;
+        height: 400px;
+        margin: auto;
+        margin-right: 70px;
+        border: 1px solid none;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(4, 100px);
+
+
+      }
+
+      #mid>div>img {
+        margin-top: -1px;
+        width: 100%;
+        height: 80%;
+        margin-right: 10px;
+        /* margin-left: 7px; */
+      }
+
+      #botton>h1 {
+        font-size: 13px;
+      }
+
+      #bottom>div {
+        width: 50%;
+        height: 900px;
+        border: 1px solid none;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        gap: 20px 10px;
+        margin: auto;
+      }
+
+      #bottom>div>div {
+        border: 1px solid none;
+        background-color: rgba(255, 166, 0, 0.637);
+      }
+
+      #bottom>div>div>img {
+        width: 100%;
+        height: 90%;
+        /* margin-bottom: 20px; */
+
+      }
+
+      #bottom>div>div>p {
+        /* margin-top: -4px; */
+        /* margin-top: 20px; */
+        text-align: center;
+        margin-top: -2px;
+        font-size: 14px;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top">
+    <h1>Choose Your Store</h1>
+    <div>
+      <!-- 6 cards will go inside here  -->
+      <div>
+        <img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/3676c7e5-22df-469e-8d05-27a709371317.jpg?tr=w-400,cm-pad_resize"
+          alt="">
+        <h3>Women</h3>
+      </div>
+    </div>
+  </div>
+  <div id="mid">
+    <h1>Hard to Resist Deals</h1>
+    <div>
+      <!-- 8 cards will go inside here  -->
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+      <img src="https://images-static.nykaa.com/uploads/233484c0-fc72-4620-b71c-ccffb8c585e8.jpg?tr=w-400,cm-pad_resize"
+        alt="">
+    </div>
+  </div>
+  <div id="bottom">
+    <h1>Super Saving Products</h1>
+    <div>
+      <!-- 6 cards will go inside here -->
+      <div>
+        <img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+      <div><img
+          src="https://images-static.nykaa.com/uploads/db4960cc-467f-4e33-bc06-4b0b1c632592.jpg?tr=w-600,cm-pad_resize"
+          alt="">
+        <p>MIN 40% off</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #addmain {
+    width: 100%;
+    min-height: 1000px;
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #8caacf;
+  }
+
+  table tr:hover {
+    background-color: #ddd;
+  }
+
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0468aa;
+    color: white;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div id="addmain">
+    <table>
+      <thead>
+        <tr>
+          <th>img</th>
+          <th>name</th>
+          <th>price</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
+<script>
+  data = JSON.parse(localStorage.getItem("product")) || [];
+  display(data);
+  console.log(data)
+  function display(data) {
+    data.forEach(function (ele, index) {
+      //console.log(data);
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      let image = document.createElement("img");
+      image.src = ele.image_url;
+      td1.append(image);
+      let td2 = document.createElement("td");
+      td2.innerText = ele.name;
+      let td3 = document.createElement("td");
+      td3.innerText = ele.price;
+      let td4 = document.createElement("td");
+      td4.innerText = "delete";
+      td4.style.background = "red";
+      td4.addEventListener("click", function () {
+        deletarr(index)
+      });
+      tr.append(td1, td2, td3, td4)
+      document.querySelector("tbody").append(tr);
+    })
+  }
+  // function deletarr(index) {
+  //   data.splice(index, 1);
+  //   localStorage.setItem("product", JSON.stringify(data))
+  //   display(data);
+
+  // }
+</script>

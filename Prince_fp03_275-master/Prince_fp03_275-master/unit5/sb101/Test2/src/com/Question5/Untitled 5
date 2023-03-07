@@ -1,0 +1,2 @@
+Write a Java program to read a text file using BufferedReader class and write those
+text to another file using PrintWriter class.

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Amount</title>
+</head>
+
+<body>
+  <div id="navbar">
+    <h1>Add Money to wallet</h1>
+    <h1 style="text-align:end;" id="wallet"> <span id="span1"></span></h1>
+
+    <!-- Display the wallet amount here inside h1 tag with id as "wallet". Note only amount, no extra text. Like 500 not Rs 500 -->
+  </div>
+  <div id="add-money">
+    <input style="width: 25%;margin-left: 28%; display: block;" type="number" placeholder="enter Number" id="amount">
+    <!-- input box for accepting money with id as "amount" -->
+    <button onclick="clickfun()" style="margin-left: 35%; display: block; margin-top: 20px;" id="add_to_wallet">Add
+      Money</button>
+    <!-- button with id as "add_to_wallet" -->
+    <button onclick="clickgo()" style="margin-left: 35%; display: block; margin-top: 20px;" id="">Book_Movies</button>
+    <!-- button with id as "book_movies" to go to movies.html -->
+  </div>
+</body>
+
+</html>
+<script>
+  let amount = 0;
+  function clickfun() {
+    let amoun = document.getElementById("amount").value;
+    amount = Number(amount) + Number(amoun);
+    let span = document.getElementById("span1").innerText = amount;
+    localStorage.setItem("amount", amount)
+  }
+  function clickgo() {
+    window.location.href = "movies.html"
+  }
+
+
+</script>

@@ -1,0 +1,316 @@
+Sb101 : Functional programming :
+
+Collection f/w :
+
+equals and hashCode
+comparable and comparator
+List
+Set
+Map
+
+Arrays
+Collections 
+
+
+
+data types and variables:
+
+variables types: 2 types of variables
+
+primitive types 
+reference type
+
+int x = 
+
+Student s = 
+List<Student> students= 
+
+Student[] students =  
+
+
+--in Java we have 3 types of valid structures:
+
+1. Normal or concreate class
+2. Abstract class 
+3. Interface 
+
+
+class A{  //concrete class , Fully implemented Structure
+
+public void fun1(){
+//body
+}
+
+}
+
+abstract class B{ // partial implemented structure
+
+public void fun1(){
+}
+
+public abstract void fun2();
+
+}
+
+ interface C{ //fully unimplemented structure
+public static final int x=10;
+
+ public abstract void fun2();
+
+
+}
+
+
+A a1 =  3 possible values
+
+A a1 = new A();
+A a1 = new AChild();
+A a1 = null;
+
+
+B b1 = 2 possible values
+
+B b1 = new BChild();
+
+B b1 = null;
+
+
+C c1 = 2 possible values;
+
+C c1 = new CImpl();
+C c1 = null;
+
+
+int[] arr = 2 possible values
+
+int[] arr = null;
+int[] arr = new int[10];
+int[] arr = {10,20,30,40};
+
+Student[] students;
+
+
+Functional programming in Java:
+==========================
+
+--This concept introduced in Java 8.
+
+--in this type of programming, functions are treated as a value (first class citizen) than means we can assign entire function to a variable, or we can pass a function to another function parameter or we can return a function from another function as well.
+
+int i =10;
+
+class A{
+
+public void fun1(int x){
+
+}
+
+public int fun2(){
+return 10;
+}
+
+main(){
+
+A a1 = new A();
+a1.fun1(10);
+
+}
+
+}
+
+--The main adv of functional programming is less coding, more polymorphic 
+and easy to understand.
+
+Functional interface in Java:
+======================
+
+--an interface which has only one abstract method is called a FI.
+
+--With the help of FI, we can achive the functional programming in Java using Lambda expression.
+
+Note: A FI can have n number of static and default methods.
+
+***An inteface can be an empty as well, i.e it may not have any kind of method or variables, this type of empty interface is also known a Marker or Tag interface.
+
+interface X{
+}
+
+X.java ----> X.class 
+
+class A{
+
+}
+
+javac A.java   -----> A.class file (default constructor )
+
+Note: We can have a empty .java file but we can not have empty .class file of a class in java
+
+
+some of the functional interfaces in Java:
+--------------------------------------------------
+
+java.lang.Comparable   : public int compareTo(Object obj)
+java.util.Comparator    : public int compare(Object obj1, Object obj2);
+java.lang.Runnable       : public void run(); 
+java.lang.Iterable          : public Iterator iterator(); 
+
+
+****Note: Inside a functional interface we can also put any method of Object class as abstract method also.
+
+
+Intr.java:
+-------------
+
+package com.masai;
+
+@FunctionalInterface
+public interface Intr {
+
+	public abstract void sayHello(String name);
+		
+}
+
+IntrImpl.java:
+-----------------
+
+package com.masai;
+
+public class IntrImpl implements Intr{
+
+	@Override
+	public void sayHello(String name) {
+		
+		System.out.println("Welcome "+name);
+		//1000
+		
+	}
+}
+
+
+Demo.java:
+--------------
+
+package com.masai;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		
+		Intr i1= new IntrImpl();
+		i1.sayHello("Ram");
+		
+		Intr i2 = new Intr() { //annonymous inner class 
+
+	@Override
+	public void sayHello(String name) {
+		System.out.println("Using Annonymous inner class Welcome "+name);
+				
+			} 
+			
+		};
+		
+		i2.sayHello("Ramesh");
+		
+
+		Intr i3 = n -> System.out.println("Using LE, Welcome "+n);
+		
+		i3.sayHello("Simran");
+		
+
+
+	}
+
+}
+
+
+Diff bt Annonymous inner class and LE:
+=================================
+
+1. LE is much more less /concise code compare to annonymous inner class.
+
+2. to use the Annonymous inner class interface need not functional, where
+as to use the LE, interface must be functional.
+
+
+Rules to use LE:
+===============
+
+Using the LE we can provide the implementation of a functional interface 
+in much more easy/concise manner.
+
+LE comprises 3 things:-
+
+1. parameter : (here data type is optional, variable name could be anything)
+--if only one parameter is there then small bracket () is also optional, but incase zero or more than one parameter small bracket is mandatory.
+
+2. Lambda operator :    -> 
+
+3. body : {};  (here if we have only statement inside the body then curly bracket is also optional)
+
+ex:
+
+
+Intr i1 = (String name) -> {
+
+	System.out.println("Welcome :"+name);
+};
+
+
+Note: in LE, method name does not matter. because functional inteface has only one abstract method.
+
+short form of above LE:
+---------------------------
+
+Intr i1 = n -> System.out.println("Welcome :"+n);
+
+i1.sayHello("Amit");
+
+
+LE with return types:
+=================
+
+--If inside the method body only one statement is there then {} is optional , and return keyword is not allowed.
+
+
+ex:
+
+Intr.java:
+------------
+
+package com.masai;
+
+@FunctionalInterface
+public interface Intr {
+
+	public abstract String sayHello(String name);
+
+		
+}
+
+
+Demo.java:
+--------------
+
+package com.masai;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		//Long form implementation
+		Intr i2 = (String name) -> {
+			
+			return "Using LE Welcome "+name;
+		};
+		
+		//short form implementation
+		//Intr i2 = n -> "Using LE Welcome "+n;
+	
+		System.out.println(i2.sayHello("Ravi"));
+		
+		
+
+	}
+
+}

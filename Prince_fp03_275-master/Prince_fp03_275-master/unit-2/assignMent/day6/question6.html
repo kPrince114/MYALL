@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dtyle</title>
+</head>
+<style>
+  #task1 {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 30px;
+    margin: auto;
+    grid-template-areas:
+      "a b b c"
+      "d d e f"
+      "g h i i"
+    ;
+  }
+
+
+  #task1>div {
+    border-radius: 10px;
+    /* margin: auto; */
+    /* text-align: center; */
+    background-color: rgb(36, 187, 187);
+    color: teal;
+  }
+
+  #task1>div:nth-child(1) {
+    grid-area: a;
+  }
+
+  #task1>div:nth-child(2) {
+    grid-area: b;
+  }
+
+  #task1>div:nth-child(3) {
+    grid-area: c;
+  }
+
+  #task1>div:nth-child(4) {
+    grid-area: d;
+  }
+
+  #task1>div:nth-child(5) {
+    grid-area: e;
+  }
+
+  #task1>div:nth-child(6) {
+    grid-area: f;
+  }
+
+  #task1>div:nth-child(7) {
+    grid-area: g;
+  }
+
+  #task1>div:nth-child(8) {
+    grid-area: h;
+  }
+
+  #task1>div:nth-child(9) {
+    grid-area: i;
+  }
+</style>
+
+<body>
+  <div id="task1">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>

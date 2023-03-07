@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>masai webpart</title>
+</head>
+<style>
+  #box {
+    /* margin-top: 100px; */
+    width: 101%;
+    height: 80px;
+    border: 1px solid white;
+    margin: auto;
+    display: flex;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #box>div {
+    width: 7%;
+    height: 40px;
+    border: 1px solid white;
+    margin: auto;
+  }
+
+  #item {
+    flex-grow: 13;
+  }
+
+  #box>#item>img {
+    /* margin: auto; */
+    /* padding-right: 30px; */
+    text-align: center;
+    padding-left: 150px;
+
+  }
+
+  #box>div>p {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #box>#item-5 {
+    flex-grow: 5;
+  }
+
+  #box>div:nth-child(5) {
+    flex-grow: 1;
+  }
+
+  #box>div:nth-child(9) {
+    flex-grow: 5;
+  }
+
+  #box>div:nth-child(8) {
+    flex-grow: 5;
+  }
+
+  #box>div:nth-child(8)>button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+  }
+
+  #box>div:nth-child(8)>button>p {
+    color: blue;
+  }
+
+  #box>div:nth-child(8)>button>img {
+    width: 20px;
+    height: 30px;
+    padding-left: 8px;
+  }
+
+  #box>div:nth-child(9)>button {
+    margin-top: 3px;
+    margin-left: 60px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: #fff;
+    /* padding: 10px 10px 10px 10px; */
+  }
+</style>
+
+<body>
+  <div id="box">
+    <div id="item">
+      <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="error">
+    </div>
+    <div>
+      <p>COURSE > </p>
+    </div>
+    <div>
+      <p>Free & ISA</p>
+    </div>
+    <div>
+      <p>ABOUT US</p>
+    </div>
+    <div>
+      <p>HIRE FROM US</p>
+    </div>
+    <div>
+      <p>FAQ</p>
+    </div>
+    <div>
+      <p>EVENTS</p>
+    </div>
+    <div>
+      <button>
+        <p>REFER & EARN </p><img src="hand.png" alt="error">
+      </button>
+    </div>
+    <div>
+      <button>LOGIN</button>
+    </div>
+  </div>
+</body>
+
+</html>
