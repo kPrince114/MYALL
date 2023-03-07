@@ -1,3 +1,5 @@
+package day9;
+
 // package day9;
 import java.util.Scanner;
 import java.util.*;

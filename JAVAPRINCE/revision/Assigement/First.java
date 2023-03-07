@@ -1,3 +1,5 @@
+package Assigement;
+
 import java.util.*;
 public class First {
     
